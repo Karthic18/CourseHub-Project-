@@ -1,0 +1,66 @@
+import { Routes, Route, Navigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+
+import Login from "./pages/Login"
+import Dashboard from "./pages/Dashboard"
+import Courses from "./pages/Courses"
+import Profile from "./pages/Profile"
+
+import Sidebar from "./components/Sidebar"
+import Topbar from "./components/Topbar"
+
+function App(){
+
+const [darkMode,setDarkMode] = useState(false)
+const [isLoggedIn,setIsLoggedIn] = useState(false)
+
+useEffect(()=>{
+
+if(darkMode){
+document.body.classList.add("dark-mode")
+}else{
+document.body.classList.remove("dark-mode")
+}
+
+},[darkMode])
+
+// SHOW LOGIN PAGE FIRST
+if(!isLoggedIn){
+return <Login onLogin={()=>setIsLoggedIn(true)}/>
+}
+
+return(
+
+<div style={{display:"flex"}}>
+
+<Sidebar/>
+
+<div style={{flex:1, marginLeft:"220px"}}>
+
+<Topbar toggleTheme={()=>setDarkMode(!darkMode)}/>
+
+<div style={{padding:"20px"}}>
+
+<Routes>
+
+<Route path="/" element={<Navigate to="/dashboard"/>} />
+
+<Route path="/dashboard" element={<Dashboard darkMode={darkMode}/>}/>
+
+<Route path="/courses" element={<Courses darkMode={darkMode}/>}/>
+
+<Route path="/profile" element={<Profile darkMode={darkMode}/>}/>
+
+</Routes>
+
+</div>
+
+</div>
+
+</div>
+
+)
+
+}
+
+export default App

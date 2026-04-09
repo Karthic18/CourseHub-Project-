@@ -1,0 +1,181 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.progress-container{
+width:100%;
+height:8px;
+background:#e5e7eb;
+border-radius:10px;
+margin-top:6px;
+}
+
+.progress-bar{
+height:100%;
+background:#3b82f6;
+border-radius:10px;
+}
+
+.progress-text{
+font-size:12px;
+color:#555;
+}
+.course-card{
+transition: all 0.3s ease;
+}
+
+.course-card:hover{
+transform: translateY(-6px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.notification{
+position:relative;
+font-size:20px;
+margin-right:15px;
+cursor:pointer;
+}
+
+.badge{
+position:absolute;
+top:-5px;
+right:-8px;
+background:red;
+color:white;
+font-size:11px;
+border-radius:50%;
+padding:2px 6px;
+}
+.skills{
+margin-top:10px;
+}
+
+.skill{
+background:#eef2ff;
+padding:6px 12px;
+border-radius:20px;
+margin:4px;
+display:inline-block;
+font-size:12px;
+}
+.light{
+background:#f5f7fb;
+color:#222;
+min-height:100vh;
+}
+.light .course-card,
+.light .profile-card,
+.light .stat-card{
+background:white;
+}
+
+.dark .course-card,
+.dark .profile-card,
+.dark .stat-card{
+background:#1e1e1e;
+}
+.dark .sidebar{
+background:#0f172a;
+}
+
+.light .sidebar{
+background:#1e293b;
+}
+.dark .navbar{
+background:#1a1a1a;
+}
+
+.light .navbar{
+background:white;
+}
+.theme-btn{
+background:none;
+border:none;
+font-size:18px;
+cursor:pointer;
+margin-right:15px;
+}
+.dark-mode{
+background-color:#111827;
+color:white;
+}
+
+.dark-mode .card{
+background:#1f2937;
+color:white;
+}
+
+.dark-mode input{
+background:#374151;
+color:white;
+border:1px solid #555;
+}
+/* progress bar */
+
+.progress-container{
+width:100%;
+height:10px;
+background:#e5e7eb;
+border-radius:10px;
+margin-top:5px;
+}
+
+.progress-bar{
+height:100%;
+background:#3b82f6;
+border-radius:10px;
+}
+
+/* progress text */
+
+.progress-text{
+font-size:14px;
+color:#333;
+}
+
+/* DARK MODE FIX */
+
+body.dark-mode .progress-text{
+color:white;
+}
+
+body.dark-mode .progress-container{
+background:#374151;
+}
